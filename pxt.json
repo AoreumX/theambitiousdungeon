@@ -1,0 +1,67 @@
+{
+    "name": "TheAmbitiousDungeon",
+    "description": "",
+    "dependencies": {
+        "device": "*",
+        "controller": "*",
+        "sprite-scaling": "*",
+        "animation": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
+        "arcade-background-scroll": "github:microsoft/arcade-background-scroll#v0.1.2",
+        "arcade-story": "github:microsoft/arcade-storytelling#v1.0.3",
+        "arcade-sprite-events": "github:riknoll/arcade-sprite-events#dc93eec8412053ebbd2b8f01cf5b6ae285d28900",
+        "arcade-sprite-util": "github:jwunderl/arcade-sprite-util#v0.4.1",
+        "pxt-lantern": "github:felixtsu/pxt-lantern#v0.2.1",
+        "arcade-shader": "github:riknoll/arcade-shader#d2a2572906fdb68ff429f337e30606b069e688ea",
+        "pxt-sight": "github:felixtsu/pxt-sight#v0.2.2",
+        "sound effects": "github:klausw3/pxt-sound-effects#v1.2.0",
+        "Musical-Images": "github:UnsignedArduino/Musical-Images#v2.1.2",
+        "Modes by Unique": "github:projectsbyunique/modes#v1.1.0",
+        "arcade-fancy-text": "github:riknoll/arcade-fancy-text#v0.1.1",
+        "arcade-text": "github:AqeeAqee/arcade-text#v1.4.1",
+        "color-coded-tilemap": "*",
+        "arcade-character-animations": "github:microsoft/arcade-character-animations#v0.0.2",
+        "ArcadeMIDI": "github:UnsignedArduino/ArcadeMIDI#af121437d59fd6b2cec54501ac437db1eaa766f5",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0",
+        "arcade-tile-util": "github:microsoft/arcade-tile-util#v1.2.0"
+    },
+    "files": [
+        "main.blocks",
+        "main.ts",
+        "README.md",
+        "assets.json",
+        "tilemap.g.jres",
+        "tilemap.g.ts",
+        "images.g.jres",
+        "images.g.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "targetVersions": {
+        "target": "1.12.56",
+        "targetId": "arcade"
+    },
+    "supportedTargets": [
+        "arcade"
+    ],
+    "preferredEditor": "blocksprj",
+    "palette": [
+        "#000000",
+        "#f5edba",
+        "#9d303b",
+        "#d26471",
+        "#e4943a",
+        "#c0c741",
+        "#647d34",
+        "#34859d",
+        "#17434b",
+        "#7ec4c1",
+        "#584563",
+        "#8c8fae",
+        "#3e2137",
+        "#d79b7d",
+        "#9a6348",
+        "#1f0e1c"
+    ]
+}
