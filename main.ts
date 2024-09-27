@@ -977,6 +977,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Boss, function (sprite, othe
             sprites.destroy(BSProjectile, effects.fire, 200)
         } else if (sprite == MagiShot) {
             statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -10
+            MagiShot.setPosition(-500, -500)
             sprites.destroy(MagiShot, effects.disintegrate, 100)
         } else if (sprite == Attack) {
             statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -20
@@ -1671,6 +1672,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Conjurer, function (sprite, 
         sprites.destroy(BSProjectile, effects.fire, 200)
     } else if (sprite == MagiShot) {
         statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -10
+        MagiShot.setPosition(-500, -500)
         sprites.destroy(MagiShot, effects.disintegrate, 100)
     } else if (sprite == Attack) {
         statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -20
@@ -1984,6 +1986,7 @@ events.wallEvent(SpriteKind.Projectile, events.simpleWallCondition(events.WallFl
         sprites.destroy(BSProjectile, effects.fire, 200)
     } else if (sprite == MagiShot) {
         MagiShot.setVelocity(0, 0)
+        MagiShot.setPosition(-500, -500)
         sprites.destroy(MagiShot, effects.disintegrate, 100)
     }
 })
@@ -2028,6 +2031,11 @@ sprites.onCreated(SpriteKind.Projectile, function (sprite) {
         sprites.destroy(BSProjectile)
     }
 })
+function CombatLevelcheck () {
+    if (Level == 2) {
+        Magishoot()
+    }
+}
 sprites.onDestroyed(SpriteKind.Enemy, function (sprite) {
     let list: Sprite[] = []
     sprites.destroy(MagiShot, effects.disintegrate, 100)
@@ -2087,6 +2095,14 @@ function EnemyDistCheck () {
     }
     if (AggroList.length == 0) {
         Combat = 0
+        if (Level == 2) {
+            Combat = 1
+            if (MSisSpawned == 1) {
+                Magishoot()
+            } else {
+                return
+            }
+        }
     } else {
         Combat = 1
         if (MSisSpawned == 1) {
@@ -2102,6 +2118,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, oth
         sprites.destroy(BSProjectile, effects.fire, 200)
     } else if (sprite == MagiShot) {
         statusbars.getStatusBarAttachedTo(StatusBarKind.EnemyHealth, otherSprite).value += -10
+        MagiShot.setPosition(-500, -500)
         sprites.destroy(MagiShot, effects.disintegrate, 100)
     } else if (sprite == Attack) {
         if (Difficulty == 1) {
