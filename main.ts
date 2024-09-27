@@ -307,12 +307,16 @@ function swingAnimReturn () {
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (BoomTossReady == 1) {
         if (ShootDirection == 1) {
+            BoomTossReady = 0
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, 70, 0)
         } else if (ShootDirection == 2) {
+            BoomTossReady = 0
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, -70, 0)
         } else if (ShootDirection == 3) {
+            BoomTossReady = 0
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, 0, -70)
         } else if (ShootDirection == 4) {
+            BoomTossReady = 0
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, 0, 70)
         }
     }
@@ -2019,8 +2023,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Tile warp bottom`, function (
     }
 })
 sprites.onCreated(SpriteKind.Projectile, function (sprite) {
-    BoomTossReady = 0
     if (sprite == BSProjectile) {
+        pause(3000)
         sprites.destroy(BSProjectile)
     }
 })
