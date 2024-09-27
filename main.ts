@@ -308,16 +308,12 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     if (BoomTossReady == 1) {
         if (ShootDirection == 1) {
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, 70, 0)
-            pause(2000)
         } else if (ShootDirection == 2) {
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, -70, 0)
-            pause(2000)
         } else if (ShootDirection == 3) {
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, 0, -70)
-            pause(2000)
         } else if (ShootDirection == 4) {
             BSProjectile = sprites.createProjectileFromSprite(assets.image`BoomSlime`, mySprite, 0, 70)
-            pause(2000)
         }
     }
 })
@@ -2025,7 +2021,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`Tile warp bottom`, function (
 sprites.onCreated(SpriteKind.Projectile, function (sprite) {
     BoomTossReady = 0
     if (sprite == BSProjectile) {
-        pause(3000)
         sprites.destroy(BSProjectile)
     }
 })
